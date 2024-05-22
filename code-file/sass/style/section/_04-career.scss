@@ -1,0 +1,148 @@
+@use "../config/variables" as v;
+@use "../mixin" as m;
+
+/*== 経歴 ========================================*/
+#career {
+   background-color: v.$black;
+
+   .content-title {
+      color: v.$white;
+      padding-top: 240px;
+      margin-top: 0;
+      @media screen and (max-width: 1522px) {
+         padding-top: 160px;
+         margin-top: 0;
+      }
+   
+      @include m.mq(tab) {
+         padding-top: 120px;
+         margin-top: 0;
+      }
+   
+      @include m.mq(sp) {
+         padding-top: 80px;
+         margin-top: 0;
+      }
+   }
+
+   .content-p{
+      color: v.$white;
+      font-size: 24px;
+      margin-bottom: 240px;
+      @media screen and (max-width: 1522px) {
+         margin-bottom: 160px;
+         font-size: 20px;
+      }
+   
+      @include m.mq(tab) {
+         margin-bottom: 120px;
+         font-size: 20px;
+      }
+   
+      @include m.mq(sp) {
+         margin-bottom: 80px;
+         font-size: 16px;
+      }
+   }
+}
+
+.acd-check {
+   display: none;
+}
+
+.acd-label {
+   display: block;
+   color: v.$white;
+   background: v.$black;
+   font-size: 32px;
+   margin-top: 1px;
+   margin-bottom: 1px;
+   padding: 16px;
+   border-top: 2px solid v.$gray;
+
+   @include m.mq(pc-s) {
+      font-size: 28px;
+   }
+
+   @include m.mq(tab) {
+      font-size: 24px;
+   }
+
+   @include m.mq(sp) {
+      font-size: 24px;
+   }
+
+   @media screen and (max-width: 580px) {
+      font-size: 18px;
+   }
+
+   @media screen and (max-width: 460px) {
+      font-size: 14px;
+   }
+
+   span {
+      font-size: 16px;
+      @include m.mq(tab) {
+         font-size: 12px;
+      }
+
+      @include m.mq(sp) {
+         font-size: 12px;
+      }
+
+      @media screen and (max-width: 460px) {
+         font-size: 10px;
+      }
+
+   }
+
+}
+
+.acd-content {
+   background-color: v.$white;
+   border-right: 2px solid v.$black;
+   border-left: 2px solid v.$black;
+   height: 0;
+   opacity: 0;
+   padding: 0 10px;
+   transition: 1s;
+   visibility: hidden;
+
+   p {
+      font-size: 24px;
+      @media screen and (max-width: 1522px) {
+         font-size: 20px;
+      }
+
+      @include m.mq(tab) {
+         font-size: 16px;
+      }
+
+      @include m.mq(sp) {
+         font-size: 16px;
+      }
+
+      @media screen and (max-width: 580px) {
+         font-size: 14px;
+      }
+
+      @media screen and (max-width: 460px) {
+         font-size: 12px;
+      }
+   }
+}
+
+.acd-check:checked+.acd-label+.acd-content {
+   height: auto;
+   opacity: 1;
+   padding: 32px 0;
+   visibility: visible;
+
+   @include m.mq(tab) {
+      padding: 24px 0;
+   }
+
+   @include m.mq(sp) {
+      padding: 16px 0;
+   }
+}
