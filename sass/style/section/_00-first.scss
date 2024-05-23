@@ -1,0 +1,108 @@
+@use "../config/variables" as v;
+@use "../mixin" as m;
+
+/*== ファーストビュー ========================================*/
+#gero {
+   margin-top: 240px;
+
+   @media screen and (max-width: 1522px) {
+      margin-top: 160px;
+   }
+
+   @include m.mq(tab) {
+      margin-top: 120px;
+   }
+
+   @include m.mq(sp) {
+      margin-top: 120px;
+   }
+
+   .content-box {
+      background-color: v.$white;
+      position: relative;
+      text-align: center;
+      margin: 0 auto;
+      height: 100vh;
+      width: 100%;
+      
+      img{
+         width: 100%;
+         height: auto;
+         border-radius: 25px;
+      }
+
+      .in-box {
+         position: absolute;
+         top: 10%;
+         left: 5%;
+
+         .title {
+            font-size: 22px;
+            font-weight: 700;
+            color: v.$white;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            transform: translate(-100%, 0);
+            transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+
+            @include m.mq(pc-s) {
+               font-size: 20px;
+            }
+
+            @media screen and (max-width: 832.999px) {
+               font-size: clamp(0.4rem, 1vw + 0.5rem, 2rem);
+            }
+         }
+
+         .title span {
+            display: block;
+            transform: translate(100%, 0);
+            transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+         }
+
+         .title.-visible,
+         .title.-visible span {
+            transform: translate(0, 0);
+         }
+
+         .sentence {
+            color: v.$white;
+            font-size: clamp(1rem, 1vw + 2rem, 4rem);
+            font-weight: 700;
+            width: 100%;
+            margin-top: 8px;
+            text-align: center;
+            overflow: hidden;
+            transform: translate(-100%, 0);
+            transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+
+            @include m.mq(pc-s) {
+               font-size: 32px;
+            }
+
+            @media screen and (max-width: 832.999px) {
+               font-size: clamp(0.8rem, 0.8vw + 1.7rem, 3rem);
+               margin-top: 4px;
+            }
+
+            @media screen and (max-width: 506px) {
+               font-size: clamp(0.3rem, 1vw + 1.1rem, 3rem);
+               margin-top: 4px;
+            }
+         }
+
+         .sentence span {
+            display: block;
+            transform: translate(100%, 0);
+            transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+         }
+
+         .sentence.-visible,
+         .sentence.-visible span {
+            transform: translate(0, 0);
+         }
+      }
+   }
+}
+

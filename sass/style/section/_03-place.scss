@@ -1,0 +1,254 @@
+@use "../config/variables" as v;
+@use "../mixin" as m;
+
+/*== 活動場所 ========================================*/
+#place {
+   max-width: 980px;
+
+   .content-title {
+      color: #ee7800;
+      margin-top: 0;
+   }
+
+   .place {
+      margin-top: 180px;
+
+      @media screen and (max-width: 1522px) {
+         margin-top: 160px;
+      }
+
+      @include m.mq(tab) {
+         margin-top: 120px;
+      }
+
+      @include m.mq(sp) {
+         margin-top: 80px;
+      }
+   }
+
+   // YouTube ----------------------------------------
+   .place-youtube {
+      margin: 0 auto;
+
+      img {
+         width: 90%;
+         height: auto;
+      }
+
+      .in-box h4,
+      .in-box p {
+         color: v.$youtube;
+      }
+
+      .button-box {
+         margin: 16px auto 0px;
+
+         .link-button {
+            color: v.$white;
+            background-color: v.$youtube;
+            border-radius: 8px;
+            padding: 2px 8px;
+            margin: 0px 2px;
+         }
+      }
+   }
+
+   // Twitch ----------------------------------------
+   .place-twitch {
+
+      img {
+         width: 90%;
+         height: auto;
+      }
+      
+      .in-box h4,
+      .in-box p {
+         color: v.$twitch;
+      }
+
+      .button-box {
+         margin: 16px auto 0px;
+
+         .link-button {
+            color: v.$white;
+            background-color: v.$twitch;
+            border-radius: 8px;
+            padding: 2px 8px;
+            margin: 0px 2px;
+         }
+      }
+   }
+
+   // Twitter ----------------------------------------
+   .place-twitter {
+      display: flex;
+
+      @include m.mq(sp) {
+         flex-direction: column;
+      }
+
+      .left,
+      .right {
+         flex-grow: 1;
+         width: 90%;
+         margin: 0 auto;
+      }
+
+      .left {
+         @include m.mq(sp) {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+         }
+      }
+
+      .right {
+         margin-top: auto;
+
+         .in-box h4,
+         .in-box p {
+            color: v.$twitter;
+         }
+      }
+   }
+
+   // Instagram ----------------------------------------
+   .place-instagram {
+      display: flex;
+
+      @include m.mq(sp) {
+         flex-direction: column;
+      }
+
+      .left,
+      .right {
+         flex-grow: 1;
+         width: 90%;
+         margin: 0 auto;
+      }
+
+      .left {
+         position: relative;
+
+         .in-box {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 100%;
+         }
+
+         .in-box h4,
+         .in-box p {
+            background: -moz-linear-gradient(left, #4C64D3, #CF2E92 30%, #F26939 60%, #FFDD83);
+            background: -webkit-linear-gradient(left, #4C64D3, #CF2E92 30%, #F26939 60%, #FFDD83);
+            background: linear-gradient(to right, #4C64D3, #CF2E92 30%, #F26939 60%, #FFDD83);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+
+         @include m.mq(sp) {
+            display: none;
+         }
+      }
+
+      .right {
+         margin-right: 16px;
+
+         @include m.mq(sp) {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+         }
+      }
+
+      .left2 {
+         display: none;
+
+         @include m.mq(sp) {
+            display: block;
+
+            .in-box h4,
+            .in-box p {
+               color: v.$twitch;
+            }
+         }
+      }
+
+      .instagram-media {
+         width: 95%;
+
+         @include m.mq(sp) {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 315px !important;
+            max-width: 540px !important;
+            min-width: initial !important;
+         }
+      }
+   }
+
+   // in-box ----------------------------------------
+   .in-box {
+      h4 {
+         font-size: 40px;
+         font-weight: 700;
+         margin: 80px auto 0;
+         text-align: center;
+
+         @media screen and (max-width: 1522px) {
+            font-size: 32px;
+            margin: 64px auto 0;
+         }
+
+         @include m.mq(tab) {
+            margin: 56px auto 0;
+         }
+
+         @include m.mq(sp) {
+            font-size: 28px;
+            margin: 40px auto 0;
+         }
+
+         @media screen and (max-width: 580px) {
+            font-size: 24px;
+            margin: 32px auto 0;
+         }
+
+         @media screen and (max-width: 460px) {
+            font-size: 20px;
+            margin: 28px auto 0;
+         }
+      }
+
+      p {
+         font-size: 20px;
+         font-weight: 500;
+         margin: 32px auto 0;
+         text-align: center;
+
+         @media screen and (max-width: 1522px) {
+            font-size: 16px;
+            margin: 32px auto 0;
+         }
+
+         @include m.mq(tab) {
+            margin: 28px auto 0;
+         }
+
+         @include m.mq(sp) {
+            margin: 8px auto 0;
+         }
+
+         @media screen and (max-width: 580px) {
+            font-size: 16px;
+            margin: 4px auto;
+         }
+
+         @media screen and (max-width: 460px) {
+            font-size: 12px;
+         }
+      }
+   }
+}

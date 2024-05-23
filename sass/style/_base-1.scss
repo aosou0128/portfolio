@@ -1,0 +1,329 @@
+@use "config/variables" as v;
+@use "mixin" as m;
+
+/*== 共有スタイル ========================================*/
+body {
+   color: v.$p;
+   background-color: v.$white;
+   font-size: 16px;
+   line-height: 1.2;
+   -webkit-text-size-adjust: 100%;
+   margin: 0 auto;
+   font-feature-settings: "palt";
+}
+
+body.fixed {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+}
+
+
+.nav-category-s li a,
+.nav-category-s li.on a {
+   position: relative;
+   padding: 4px;
+
+   @media screen and (max-width: 832px) {
+      position: relative;
+      padding: 1px;
+   }
+}
+
+.nav-category-s li a::after,
+.nav-category-s li.on a::after {
+   position: absolute;
+   content: '';
+   background-color: v.$black;
+   left: 0;
+   bottom: 0;
+   width: 0;
+   height: 100%;
+   transition: all .5s;
+   opacity: 0;
+   z-index: -1;
+}
+
+.nav-category-s li a:hover::after,
+.nav-category-s li.on a::after {
+   width: 100%;
+   opacity: 1;
+}
+
+.nav-category-s li a:hover,
+.nav-category-s li.on a {
+   color: v.$white;
+}
+
+
+.scrolldown {
+   position: absolute;
+   top: 104px;
+   left: 49%;
+
+   @include m.mq(pc-s) {
+      top: 94px;
+   }
+
+   @include m.mq(tab) {
+      top: 74px;
+   }
+
+   @include m.mq(sp) {
+      top: 74px;
+   }
+
+   span {
+      color: v.$sub;
+      font-size: 12px;
+      writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode: vertical-rl;
+      letter-spacing: 0.05em;
+      padding-left: 4px;
+
+      @include m.mq(tab) {
+         font-size: 10px;
+      }
+
+      @include m.mq(sp) {
+         font-size: 10px;
+         transform: scale(0.8);
+      }
+   }
+
+   &:before {
+      position: absolute;
+      content: "";
+      background: v.$sub;
+      left: -4px;
+      bottom: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation:
+         circle-move 1.6s ease-in-out infinite,
+         circle-hide 1.6s ease-out infinite;
+
+      @media screen and (max-width: 832.999px) {
+         width: 7px;
+         height: 7px;
+         animation:
+         circle-move2 1.6s ease-in-out infinite,
+         circle-hide 1.6s ease-out infinite;
+      }
+   }
+
+   @keyframes circle-move {
+      0% {
+         bottom: 70px;
+      }
+
+      100% {
+         bottom: -5px;
+      }
+   }
+
+   @keyframes circle-move2 {
+      0% {
+         bottom: -5px;
+      }
+
+      100% {
+         bottom: 40px;
+      }
+   }
+
+
+   @keyframes circle-hide {
+      0% {
+         opacity: 0
+      }
+
+      50% {
+         opacity: 1;
+      }
+
+      80% {
+         opacity: 0.9;
+      }
+
+      100% {
+         opacity: 0;
+      }
+   }
+
+   &:after {
+      position: absolute;
+      content: "";
+      background: v.$sub;
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      height: 70px;
+
+      @media screen and (max-width: 832.999px) {
+         opacity: 0;
+      }
+   }
+}
+
+/*== 共有パーツ ========================================*/
+
+section {
+   max-width: 95%;
+   width: 100%;
+   margin: 0 auto;
+
+   @media screen and (max-width: 832.999px) {
+      max-width: 90%;
+      width: 100%;
+      margin: 0 auto;
+   }
+}
+
+.section-title {
+   color: v.$main;
+   display: inline-block;
+   padding: 15px 20px;
+   font-size: 72px;
+   font-weight: 700;
+   border: 5px solid v.$main;
+   border-radius: 25px;
+   margin: 240px auto 20px;
+
+   @media screen and (max-width: 1022.999px) and (min-width: 735px) {
+      padding: 8px 20px;
+      font-size: 48px;
+      margin: 240px auto 16px;
+   }
+
+   @media screen and (max-width: 832.999px) {
+      border: 3px solid v.$main;
+      font-size: clamp(1.5rem, 5vw + 0.5rem, 3rem);
+   }
+
+   @include m.mq(sp) {
+      padding: 8px 16px;
+      margin: 0 auto 8px;
+   }
+
+   @media screen and (max-width: 570px) {
+      padding: 8px 8px;
+      margin: 0 auto 8px;
+
+      span {
+         display: inline-block;
+      }
+   }
+}
+
+.section-sub {
+   font-size: 20px;
+   font-weight: 500;
+   margin: 0 auto 40px;
+
+   @include m.mq(pc-s) {
+      font-size: 16px;
+   }
+
+   @include m.mq(tab) {
+      font-size: 16px;
+      margin: 0 auto 32px;
+   }
+
+   @include m.mq(sp) {
+      font-size: 12px;
+      margin: 0 auto 16px;
+   }
+}
+
+.common-title {
+   color: v.$main;
+   font-size: 28px;
+   font-weight: 700;
+   padding-top: 160px;
+   margin: 0 auto 40px;
+   text-align: center;
+
+   @include m.mq(pc-s) {
+      font-size: 24px;
+   }
+
+   @include m.mq(tab) {
+      font-size: 20px;
+      padding-top: 120px;
+      margin: 0 auto 32px;
+   }
+
+   @include m.mq(sp) {
+      font-size: 16px;
+      padding-top: 80px;
+      margin: 0 auto 16px;
+   }
+}
+
+.title {
+   color: v.$black;
+   font-size: 20px;
+   font-weight: 700;
+   text-align: center;
+   margin-bottom: 8px;
+
+   @include m.mq(pc-s) {
+      font-size: 18px;
+      margin-bottom: 4px;
+   }
+
+   @include m.mq(tab) {
+      font-size: 16px;
+      margin-bottom: 4px;
+   }
+
+   @include m.mq(sp) {
+      font-size: 14px;
+      margin-bottom: 2px;
+   }
+
+   @media screen and (max-width: 570px) {
+      font-size: 12px;
+      margin-bottom: 2px;
+   }
+}
+
+p {
+   font-size: 12px;
+   text-align: center;
+
+   @include m.mq(tab) {
+      font-size: 10px;
+   }
+
+   @include m.mq(sp) {
+      font-size: 10px;
+      transform: scale(0.8);
+   }
+}
+
+.url {
+   color: v.$url;
+   text-decoration: none;
+}
+
+
+.fadeIn {
+   animation-name: fadeInAnime;
+   animation-duration: 2s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+
+@keyframes fadeInAnime {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}

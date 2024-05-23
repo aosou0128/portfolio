@@ -1,0 +1,285 @@
+@use "config/variables" as v;
+@use "mixin" as m;
+
+/*== フッター =========================================*/
+
+// 833～ ----------------------------------------
+@media screen and (min-width: 833px) {
+   #footer {
+      width: 100%;
+      margin: 16px auto 16px;
+      border-top: 1px solid v.$border;
+
+      .footer-flex {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         margin: 0 0 32px;
+         width: 100%;
+
+         .sitemap {
+            .list {
+               display: flex;
+               margin-top: 32px;
+               padding: 0 40px 0 0;
+            }
+
+            .box {
+               text-align: left;
+               margin-left: 40px;
+
+               .title {
+                  font-size: 12px;
+                  font-weight: 700;
+                  text-align: left;
+               }
+
+               p {
+                  font-size: 12px;
+                  font-weight: 400;
+                  text-align: left;
+                  margin-top: 8px;
+               }
+            }
+         }
+
+         #my-profile {
+            display: flex;
+            justify-content: left;
+            margin-top: 32px;
+            padding: 0 40px;
+            height: 50px;
+
+            .profile-img {
+               img {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 25px;
+                  display: inline-block;
+                  margin: auto 0;
+               }
+            }
+
+            .profile-p {
+               margin: auto 0 auto 8px;
+
+               .name {
+                  color: v.$black;
+                  font-size: 12px;
+                  font-weight: 500;
+               }
+
+               p {
+                  font-size: 12px;
+                  font-weight: 400;
+                  text-align: left;
+
+                  a {
+                     color: v.$url;
+                  }
+               }
+            }
+         }
+      }
+
+      .copyright {
+         text-align: center;
+         border-top: 1px solid v.$border;
+         padding-top: 16px;
+
+         p {
+            font-size: 12px;
+            font-weight: 400;
+            color: v.$gray;
+         }
+      }
+   }
+}
+
+// 466～832 ----------------------------------------
+@media screen and (max-width: 832.999px) and (min-width: 466px) {
+   #footer {
+      width: 100%;
+      margin: 0 auto 16px;
+      border-top: 1px solid v.$border;
+
+      .footer-flex {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         margin: 0 0 32px;
+         width: 100%;
+
+         .sitemap {
+            .list {
+               display: flex;
+               margin-top: 32px;
+               padding: 0 40px 0 0;
+            }
+
+            .box {
+               text-align: center;
+               margin-left: 40px;
+
+               .title {
+                  font-size: 12px;
+                  font-weight: 700;
+                  text-align: center;
+               }
+
+               p {
+                  font-size: 12px;
+                  font-weight: 400;
+                  text-align: left;
+                  margin-top: 8px;
+               }
+            }
+         }
+
+         #my-profile {
+            display: flex;
+            justify-content: left;
+            margin-top: 32px;
+            padding: 0 40px;
+
+            .profile-img {
+               display: flex;
+               align-items: center;
+               img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 20px;
+                  display: inline-block;
+                  margin: auto 0;
+               }
+            }
+
+            .profile-p {
+               margin: auto 0 auto 8px;
+
+               .name {
+                  color: v.$black;
+                  font-size: 12px;
+                  font-weight: 500;
+                  margin-top: 4px;
+               }
+
+               p {
+                  font-size: 12px;
+                  font-weight: 400;
+                  text-align: left;
+                  margin-bottom: 4px;
+                  display: inline;
+                  font-size: 10px;
+
+                  a {
+                     color: v.$url;
+                  }
+               }
+            }
+         }
+      }
+
+      .copyright {
+         text-align: center;
+         border-top: 1px solid v.$border;
+         padding-top: 16px;
+
+         p {
+            font-size: 12px;
+            font-weight: 400;
+            color: v.$gray;
+         }
+      }
+   }
+}
+
+// ～465 ----------------------------------------
+@media screen and (max-width: 465.999px) {
+   #footer {
+      width: 100%;
+      margin: 0 auto 16px;
+
+      .footer-flex {
+         justify-content: center;
+         margin: 0 0 32px;
+         width: 100%;
+
+         .sitemap {
+            justify-content: center;
+
+            .box {
+               text-align: center;
+               border-top: 1px solid v.$border;
+               margin: 0 auto;
+               padding: 8px 0;
+
+               &:last-child {
+                  border-bottom: 1px solid v.$border;
+               }
+
+               .title {
+                  font-size: 12px;
+                  font-weight: 700;
+                  text-align: center;
+                  margin-bottom: 0;
+               }
+            }
+         }
+
+         #my-profile {
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+            padding: 0 20px;
+
+            .profile-img {
+               img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 20px;
+                  background-color: v.$gray;
+                  display: inline-block;
+                  margin: auto 0;
+               }
+            }
+
+            .profile-p {
+               margin: auto 0 auto 8px;
+
+               .name {
+                  color: v.$black;
+                  font-size: 12px;
+                  font-weight: 500;
+                  margin-top: 4px;
+                  text-align: left;
+               }
+
+               .para {
+                  display: inline;
+                  font-size: 10px;
+                  transform: scale(0.8);
+                  font-weight: 400;
+                  margin-bottom: 4px;
+
+                  a {
+                     color: v.$url;
+                  }
+               }
+            }
+         }
+      }
+
+      .copyright {
+         text-align: center;
+         border-top: 1px solid v.$border;
+         padding-top: 16px;
+
+         p {
+            font-size: 12px;
+            font-weight: 400;
+            color: v.$gray;
+         }
+      }
+   }
+}
