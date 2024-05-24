@@ -14,11 +14,6 @@ body {
   font-weight: 500;
 }
 
-#web {
-  font-family: "Noto Serif JP", serif;
-  font-weight: 500;
-}
-
 /*-- 変数($) --*/ /*-- 使いまわせる設定(@mixin) --*/
 /*-- メディアクエリ --*/
 /*== 共有スタイル ========================================*/
@@ -1983,12 +1978,6 @@ p {
   .acd-check:checked + .acd-label + .acd-content {
     padding: 16px 0;
   }
-}
-
-/*== web制作について ========================================*/
-#web .source-code {
-  height: 1000px;
-  width: 80%;
 }
 
 /* 共通 */
